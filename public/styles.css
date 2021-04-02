@@ -1,0 +1,56 @@
+:root {
+    font-size: 18px;
+    color: #444;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    color: tomato;
+}
+
+.navbar {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom:1px solid #ccc ;
+    padding: 10px;
+}
+
+.nav a {
+display: inline-block;
+padding: 5px 10px;
+
+}
+
+/*  Home Page */
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.intro-sen {
+    font-size: 2rem;
+    max-width: 60%;
+    padding: 100px 0 30px 0;
+}
+
+.create-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color:tomato ;
+}
