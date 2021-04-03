@@ -54,3 +54,73 @@ padding: 5px 10px;
     padding: 10px 20px;
     background-color:tomato ;
 }
+
+
+/*  Create page styles */
+
+.form {
+    max-width: 60%;
+
+}
+
+.input{
+    width: 100%;;
+    display: block;
+    padding: 10px;
+    font-size: 1.3rem;
+    font-family: inherit;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: tomato;
+    color: #fff;
+    font-size: 1.3rem;
+    border: none;
+    padding: 10px 20px;
+    font-family: inherit;
+
+
+}
+
+
+/*  Blog posts page  */
+.post-wrapper {
+    display: flex;
+    justify-content: space-between;
+    max-width: 60%;
+    padding:10px;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+}
+
+.post {
+    font-size: 1.3rem;
+}
+
+.delete {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: tomato;
+    color: #fff;
+}
+
+
+.error {
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid red;
+    font-size: 1.2rem;
+    color: red;
+}
+
+
+.success {
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid green;
+    font-size: 1.2rem;
+    color: green;
+}
