@@ -4,7 +4,7 @@ const app = express()
 const fs = require('fs');
 const { notStrictEqual } = require('assert');
 
-const posts = ['Some awesome post - 1', 'Some awesome post - 2', 'Some awesome post - 3']
+
 
 app.set('view engine', 'pug');
 
@@ -40,6 +40,7 @@ app.post('/create', (req, res) => {
                 title: title,
                 description: description,
             })
+
             fs.writeFile('./data/posts.json', JSON.stringify(posts), err => {
                 if (err) throw err
 
@@ -55,11 +56,29 @@ app.post('/create', (req, res) => {
 
 
 app.get('/posts', (req, res) => {
-    res.render('posts', { posts: posts })
+    fs.readFile('./data/posts.json', (err, data) => {
+        if (err) throw err
+
+        const posts = JSON.parse(data)
+
+        res.render('posts', { posts: posts })
+    })
+
 })
 
-app.get('/notes/detail', (req, res) => {
-    res.render('detail')
+app.get('/posts/:id', (req, res) => {
+    const id = req.params.id
+    fs.readFile('./data/posts.json', (err, data) => {
+        if (err) throw err
+
+        const posts = JSON.parse(data)
+
+        const post = posts.filter(post => post.id == id)[0]
+
+        res.render('detail', { post: post })
+    })
+
+
 })
 
 app.listen(8000, (err) => {
@@ -70,4 +89,4 @@ app.listen(8000, (err) => {
 
 function id() {
     return '_' + Math.random().toString(36).substr(2, 9);
-};
+}
