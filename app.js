@@ -53,7 +53,15 @@ app.post('/create', (req, res) => {
 })
 
 
+app.get('/api/v1/posts', (req, res) => {
+    fs.readFile('./data/posts.json', (err, data) => {
+        if (err) throw err
 
+        const posts = JSON.parse(data)
+
+        res.json(posts)
+    })
+})
 
 app.get('/posts', (req, res) => {
     fs.readFile('./data/posts.json', (err, data) => {
@@ -73,7 +81,7 @@ app.get('/posts/:id', (req, res) => {
 
         const posts = JSON.parse(data)
 
-        const post = posts.filter(post => post.id == id)[0]
+        const post = posts.filter(post => post.id === id)[0]
 
         res.render('detail', { post: post })
     })
