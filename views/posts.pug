@@ -3,8 +3,10 @@ extends layout.pug
 block content 
     div.container 
         h1 All the posts
-
-        each post in posts
-            div.post-wrapper
-                a.post(href=`/posts/${ post.id }`) #{ post.title } 
-                a.delete(href='#') Delete 
+        if posts.length
+            each post in posts
+                div.post-wrapper
+                    a.post(href=`/posts/${ post.id }`) #{ post.title } 
+                    a.delete(href='#') Delete 
+        else 
+            p No Any Post Here 

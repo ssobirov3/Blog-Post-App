@@ -3,7 +3,7 @@ const { render } = require('pug');
 const app = express()
 const fs = require('fs');
 const { notStrictEqual } = require('assert');
-
+const db = './data/posts.json'
 
 
 app.set('view engine', 'pug');
@@ -30,7 +30,7 @@ app.post('/create', (req, res) => {
     if (title.trim() === '' && description.trim() === '') {
         res.render('create', { err: true })
     } else {
-        fs.readFile('./data/posts.json', (err, data) => {
+        fs.readFile(db, (err, data) => {
             if (err) throw err
 
             const posts = JSON.parse(data)
@@ -41,7 +41,7 @@ app.post('/create', (req, res) => {
                 description: description,
             })
 
-            fs.writeFile('./data/posts.json', JSON.stringify(posts), err => {
+            fs.writeFile(db, JSON.stringify(posts), err => {
                 if (err) throw err
 
                 res.render('create', { success: true })
@@ -87,6 +87,11 @@ app.get('/posts/:id', (req, res) => {
     })
 
 
+})
+
+app.delete('/posts/:id', (req, res) => {
+    // const id = req.params.id
+    // db.
 })
 
 app.listen(8000, (err) => {
