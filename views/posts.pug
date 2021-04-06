@@ -7,6 +7,6 @@ block content
             each post in posts
                 div.post-wrapper
                     a.post(href=`/posts/${ post.id }`) #{ post.title } 
-                    a.delete(href='#') Delete 
+                    a.delete(href=`/posts/${ post.id }/delete`) Delete 
         else 
-            p No Any Post Here 
+            p.NoPost No Any Post Here 

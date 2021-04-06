@@ -89,10 +89,24 @@ app.get('/posts/:id', (req, res) => {
 
 })
 
-app.delete('/posts/:id', (req, res) => {
-    // const id = req.params.id
-    // db.
+app.get('/posts/:id/delete', (req, res) => {
+    const id = req.params.id
+
+    fs.readFile(db, (err, data) => {
+        if (err) throw err
+
+        const posts = JSON.parse(data)
+
+        const filteredPosts = posts.filter(post => post.id !== id)
+
+        console.log(filteredPosts)
+        fs.writeFile(db, JSON.stringify(filteredPosts), err => {
+            if (err) throw err
+            res.render('posts', { id: id, posts: filteredPosts })
+        })
+    })
 })
+
 
 app.listen(8000, (err) => {
     if (err) console.log(err);
