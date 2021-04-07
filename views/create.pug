@@ -11,10 +11,13 @@ block content
             p.success Post is created successfully
             
         form.form(action="/create" method='POST')
-            label Title
+            label Blog Title
             input.input(type="text" name='title')
 
-            label Description
-            textarea.input(type="text" name='description')
+            label Blog Snippet
+            input.input(type="text" name='snippet')
+            
+            label Blog Description
+            textarea.input(type="text" name='description' cols='10' rows='5')
 
             button.btn Create Post

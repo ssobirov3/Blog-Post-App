@@ -2,11 +2,17 @@ extends layout.pug
 
 block content 
     div.container 
-        h1 All the posts
+        h1.posts-title All the posts
+        if deleted 
+            p.success Deleted Successfully
+
         if posts.length
             each post in posts
-                div.post-wrapper
-                    a.post(href=`/posts/${ post.id }`) #{ post.title } 
-                    a.delete(href=`/posts/${ post.id }/delete`) Delete 
+                div.wrapper-each-post
+                    div.post-wrapper
+                        a.post(href=`/posts/${ post.id }`) #{ post.title } 
+                        a.delete(href=`/posts/${ post.id }/delete`) Delete 
+                    p.snippet-post(href=`/posts/${ post.id }`) #{ post.snippet }
         else 
-            p.NoPost No Any Post Here 
+            p.NoPost No Any Post Here
+            

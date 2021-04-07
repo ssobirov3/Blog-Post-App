@@ -2,5 +2,15 @@ extends layout.pug
 
 block content 
     div.container
-        h1.title #{ post.title }
+        div.detail-wrapper    
+            h1.title #{ post.title }
+            
+            if !post.archived
+                a.archive(href=`/posts/${ post.id }/archive`) Archive
+       
         p.description #{ post.description }
+        
+
+        
+
+

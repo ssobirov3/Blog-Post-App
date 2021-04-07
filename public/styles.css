@@ -1,6 +1,7 @@
 :root {
     font-size: 18px;
-    color: #444;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
 
 }
 
@@ -16,9 +17,13 @@ a {
 }
 
 
+body {
+    background-image: url('image.jfif');
+}
+
 
 a:hover {
-    color: tomato;
+    color: rgb(184, 150, 127);
 }
 
 .navbar {
@@ -27,7 +32,7 @@ a:hover {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    border-bottom:1px solid #ccc ;
+    border-bottom:1px solid white ;
     padding: 10px;
 }
 
@@ -41,7 +46,7 @@ padding: 5px 10px;
 
 .container {
     max-width: 1000px;
-    margin: 0 auto;
+    margin: 20px auto;
     padding: 10px;
 }
 
@@ -90,9 +95,15 @@ padding: 5px 10px;
 }
 
 .btn:hover{
-color: tomato
+color: rgb(184, 150, 127)
 ;
 
+}
+
+.wrapper-each-post {
+    border-left:2px solid white;
+    margin: 10px auto;
+    
 }
 /*  Blog posts page  */
 .post-wrapper {
@@ -101,16 +112,40 @@ color: tomato
     max-width: 60%;
     padding:10px;
     align-items: center;
-    border-bottom: 1px solid #ccc;
+   
 }
+
 
 .post {
     font-size: 1.3rem;
+
 }
+
+
+
+.description {
+    padding:10px;
+    font-size: 1.1rem;
+    margin: 5px;
+}
+
+.snippet {
+    font-size: 1.2rem;
+    padding: 10px;
+    
+}
+
+.snippet-post {
+    padding:0px 15px;
+}
+
+
+
+
 
 .delete {
     display: inline-block;
-    padding: 5px 10px;
+    padding: 5px 15px;
     background-color: #ccc;
     color: #fff;
 }
@@ -128,7 +163,33 @@ color: tomato
 .success {
     display: inline-block;
     padding: 10px;
-    border: 1px solid green;
+    border: 3px solid green;
     font-size: 1.2rem;
-    color: green;
+    color: white;
+    margin: 15px 0;
+
+}
+
+.posts-title,
+.NoPost {
+    
+    text-align: center;
+}
+
+.NoPost {
+    font-size: 1.5rem;
+    padding:30px;
+    margin-top: 30px;
+}
+
+.archive{
+    font-size: 1.2rem;
+    
+
+}
+
+.detail-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
