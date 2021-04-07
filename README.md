@@ -7,7 +7,7 @@ To run this application locally you must follow the steps indicated below:
 1. Clone this repository from the Github or Download the code from the GitHub using the link provided
 
 ```bash
-git clone git@github.com:ssobirov3/Blog-Post-App.git
+git clone https://github.com/ssobirov3/Blog-Post-App
 ```
 
 2. Install Depedencies 
