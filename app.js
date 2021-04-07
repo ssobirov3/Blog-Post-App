@@ -70,7 +70,7 @@ app.get('/posts', (req, res) => {
     fs.readFile(db, (err, data) => {
         if (err) throw err
 
-        const posts = JSON.parse(data)
+        const posts = JSON.parse(data).filter(post => post.archived != true)
 
         res.render('posts', { posts: posts })
     })
