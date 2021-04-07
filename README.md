@@ -28,4 +28,4 @@ node app
 - pug.js
 
 ### Web Application Repository
-[link to github repo] (https://github.com/ssobirov3/Blog-Post-App)
+https://github.com/ssobirov3/Blog-Post-App
