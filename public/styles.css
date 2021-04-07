@@ -19,6 +19,8 @@ a {
 
 body {
     background-image: url('image.jfif');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 

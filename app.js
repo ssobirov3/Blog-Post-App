@@ -72,7 +72,7 @@ app.get('/posts', (req, res) => {
 
         const posts = JSON.parse(data).filter(post => post.archived != true)
 
-        res.render('posts', { posts: posts })
+        res.render('posts', { posts: posts, heading: "All the Posts" })
     })
 
 })
@@ -107,7 +107,7 @@ app.get('/posts/:id/delete', (req, res) => {
             if (err) throw err
 
 
-            res.render('posts', { id: id, posts: filteredPosts, deleted: true })
+            res.render('posts', { id: id, posts: filteredPosts, deleted: true, heading: "All the Posts" })
         })
     })
 })
@@ -140,7 +140,7 @@ app.get('/archive', (req, res) => {
         if (err) throw err
 
         const posts = JSON.parse(data).filter(post => post.archived == true)
-        res.render('posts', { title: "Hey", posts: posts });
+        res.render('posts', { title: "Hey", posts: posts, heading: "Archived Posts" });
     })
 })
 
